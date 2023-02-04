@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+
+
+        <div class="container-fluid font-weight-bold" >
+            <h3> Merkez, Yorum Analizi Veri Girişi Formu </h3>
+            <hr>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                {{form.total_comment|as_crispy_field}}
+                {{form.total_negative_comment|as_crispy_field}}
+                {{form.total_center_negative_comment|as_crispy_field}}
+                {{form.total_branch_negative_comment|as_crispy_field}}
+                <br>
+                <br>
+                {{form.spice_problems|as_crispy_field}}
+                {{form.price_problems|as_crispy_field}}
+                {{form.portion_problems|as_crispy_field}}
+                {{form.chicken_skin_problems|as_crispy_field}}
+                {{form.fabrication_problems|as_crispy_field}}
+                {{form.vegatables_problems|as_crispy_field}}
+                {{form.foodcard_problems|as_crispy_field}}
+                {{form.chicken_unbaked_problems|as_crispy_field}}
+                {{form.stuffed_unbaked_problems|as_crispy_field}}
+                {{form.sickness_problems|as_crispy_field}}
+                {{form.package_fall_problems|as_crispy_field}}
+                {{form.meat_crackling_problems|as_crispy_field}}
+                {{form.salt_problems|as_crispy_field}}
+                {{form.oil_problems|as_crispy_field}}
+                {{form.fermantation_problems|as_crispy_field}}
+                {{form.cold_service_problems|as_crispy_field}}
+                {{form.forgot_problems|as_crispy_field}}
+                {{form.late_problems|as_crispy_field}}
+                {{form.note_problems|as_crispy_field}}
+                {{form.bread_set_problems|as_crispy_field}}
+                {{form.courier_problems|as_crispy_field}}
+                {{form.receipt_problems|as_crispy_field}}
+                <br>
+                <input type="submit" class="btn btn-secondary" onclick="this.disabled=true; this.value='Yorum Analizi Gönderiliyor...'; this.form.submit();">
+            </form>
+        </div>
+
+{% endblock %}

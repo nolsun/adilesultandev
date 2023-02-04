@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+
+
+        <div class="container-fluid font-weight-bold" >
+            <h3> Şube, Aylık Veri Girişi Formu </h3>
+            <hr>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                {{form.branch_name|as_crispy_field}}
+                {{form.person_name|as_crispy_field}}
+                {{form.email|as_crispy_field}}
+                {{form.re_email|as_crispy_field}}
+                <br>
+                <br>
+                {{form.yemeksepeti_fee|as_crispy_field}}
+                {{form.getiryemek_fee|as_crispy_field}}
+                {{form.trendyolyemek_fee|as_crispy_field}}
+                {{form.creditcards_fee|as_crispy_field}}
+                {{form.foodcards_fee|as_crispy_field}}
+                <br>
+                <br>
+                {{form.branchdrink_expenses|as_crispy_field}}
+                {{form.branchayranyoghurt_expenses|as_crispy_field}}
+                {{form.branchbread_expenses|as_crispy_field}}
+                {{form.branchkitchen_expenses|as_crispy_field}}
+                {{form.branchconsumables_expenses|as_crispy_field}}
+                {{form.branchutility_expenses|as_crispy_field}}
+                {{form.branchrent_expenses|as_crispy_field}}
+                {{form.branchinternet_expenses|as_crispy_field}}
+                <br>
+                <br>
+                {{form.manager_count|as_crispy_field}}
+                {{form.manager_expenses|as_crispy_field}}
+                {{form.staff_count|as_crispy_field}}
+                {{form.staff_expenses|as_crispy_field}}
+                {{form.courier_count|as_crispy_field}}
+                {{form.courier_expenses|as_crispy_field}}
+                <br>
+                <input type="submit" class="btn btn-secondary" onclick="this.disabled=true; this.value='İskonto kazanılıyor...'; this.form.submit();">
+            </form>
+        </div>
+
+{% endblock %}
